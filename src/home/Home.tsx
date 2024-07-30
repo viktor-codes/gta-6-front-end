@@ -1,8 +1,8 @@
-import './Home.module.css'
+import styles from './Home.module.css'
 
 function Home() {
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<form action=''>
 				<h1>GTA 6 - Leave your application</h1>
 				<input type='name' placeholder='Enter name' />
