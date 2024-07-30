@@ -23,9 +23,7 @@ function Home() {
 			},
 			body: JSON.stringify(data),
 		})
-			.then(response => {
-				response.json()
-			})
+			.then(response => response.json())
 			.then(data => {
 				if (!data) return
 
@@ -36,6 +34,7 @@ function Home() {
 				setIsLoading(false)
 			})
 	}
+
 	return (
 		<div className={styles.wrapper}>
 			<form onSubmit={handleSubmit(onSubmit)}>
@@ -43,15 +42,11 @@ function Home() {
 					<div className={styles.success}>The Form Sent!</div>
 				) : (
 					<>
-						<h1>GTA 6 - Leave your application</h1>
-						<input
-							type='name'
-							placeholder='Enter name:'
-							{...register('name')}
-						/>
+						<h1>GTA 6 - Apply now!</h1>
+						<input type='name' placeholder='Enter имя:' {...register('name')} />
 						<input
 							type='email'
-							placeholder='Enter email:'
+							placeholder='Enter Email:'
 							{...register('email')}
 						/>
 						<button disabled={isLoading}>
